@@ -22,7 +22,7 @@ export function Experience() {
     {
       role: 'Full Stack Developer Intern',
       company: 'Jorwin Advisors ',
-      location: 'On ISite',
+      location: 'On Site',
       period: 'Jan 2026 - March 2026',
       type: 'Internship',
       description: 'Contributed to full-stack development projects with focus on React.js and API integration.',
