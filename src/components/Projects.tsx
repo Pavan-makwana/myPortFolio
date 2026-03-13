@@ -24,7 +24,7 @@ export function Projects({ onViewAllProjects }: ProjectsProps) {
     {
       title: 'Finance Tracker',
       description: 'A comprehensive personal finance management application with budget tracking, expense categorization, and visual analytics.',
-      image: 'https://images.unsplash.com/photo-1748609278627-4b0e483b9b70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNlJTIwZGFzaGJvYXJkJTIwYW5hbHl0aWNzfGVufDF8fHx8MTc2ODAzNDI1OHww&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'https://media.licdn.com/dms/image/v2/D5612AQGplp7JKG6Iiw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1673950361361?e=2147483647&v=beta&t=L4d5P81GijVgU4u1yJtFLVsIqATkfWTrymEPSd_C6_o',
       tech: ['React', 'Node.js', 'Supabase', 'Chart.js'],
       github: 'https://github.com/Pavan-makwana/Finance_Tracker_P-1',
       demo: 'https://finance-tracker-pa1.vercel.app/',
@@ -32,8 +32,8 @@ export function Projects({ onViewAllProjects }: ProjectsProps) {
     {
       title: 'Zerodha Clone',
       description: 'A modern trading platform clone featuring real-time stock data, portfolio management, and trading simulation.',
-      image: 'https://images.unsplash.com/photo-1766218334217-d2cc74c36fce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdG9jayUyMHRyYWRpbmclMjBwbGF0Zm9ybXxlbnwxfHx8fDE3NjgwNTQ5OTd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      tech: ['Next.js', 'TypeScript', 'TailwindCSS', 'WebSocket'],
+      image: 'https://www.beleaftechnologies.com/static/media/dev-img-six.53e2896c3a7443267114.webp',
+      tech: ['React Vite', 'JavaScript', 'TailwindCSS', 'WebSocket'],
       github: 'https://github.com/Pavan-makwana/Zerodha-Clone-pa1',
       demo: 'https://zerodha-clone-frontend-pa1.vercel.app/',
     },
@@ -43,7 +43,7 @@ export function Projects({ onViewAllProjects }: ProjectsProps) {
     {
       title: 'DriveSync',
       description: 'Cloud storage and file synchronization platform with real-time collaboration features and secure file sharing.',
-      image: 'https://images.unsplash.com/photo-1611722341858-acb609fb3d61?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjbG91ZCUyMHN0b3JhZ2UlMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzY4MDU0OTk3fDA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'https://drivesync.tech/Img/logo.webp',
       tech: ['HTML', 'CSS', 'JavaScript'],
       github: '#',
       demo: 'https://drivesync.tech/',
@@ -51,7 +51,7 @@ export function Projects({ onViewAllProjects }: ProjectsProps) {
     {
       title: 'Geetanjali Dairy',
       description: 'E-commerce platform for dairy products with inventory management, order tracking, and customer portal.',
-      image: 'https://images.unsplash.com/photo-1762965619729-289a23a4ec8d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYWlyeSUyMGZhcm0lMjBwcm9kdWN0c3xlbnwxfHx8fDE3NjgwNTQ5OTh8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'https://geetanjalidairy.com/img/logo.webp',
       tech: ['Bootstrap', 'HTML', 'CSS', 'JavaScript'],
       github: '#',
       demo: 'https://geetanjalidairy.com/',
@@ -59,7 +59,7 @@ export function Projects({ onViewAllProjects }: ProjectsProps) {
     {
       title: 'SoulRestoCafe',
       description: 'Modern restaurant website with online ordering, table reservations, and menu management system.',
-      image: 'https://images.unsplash.com/photo-1551530078-379240770349?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwY2FmZSUyMGludGVyaW9yfGVufDF8fHx8MTc2ODA1NDk5OHww&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'https://soulrestrocafe.com/img/logo.png',
       tech: ['HTML', 'Bootstrap', 'JavaScript'],
       github: '#',
       demo: 'https://soulrestrocafe.com/',

@@ -20,6 +20,22 @@ export function Experience() {
 
   const experiences: Experience[] = [
     {
+      role: 'Full Stack Developer Intern',
+      company: 'Jorwin Advisors ',
+      location: 'On ISite',
+      period: 'Jan 2026 - March 2026',
+      type: 'Internship',
+      description: 'Contributed to full-stack development projects with focus on React.js and API integration.',
+      achievements: [
+        'Developed React.js UI components and integrated REST APIs',
+        'Assisted in debugging and improving frontend performance',
+        'Collaborated in a team-based agile environment',
+        'Implemented responsive designs following best practices',
+      ],
+      color: 'from-purple-500 to-pink-500',
+    },
+
+    {
       role: 'Web Developer (Freelance)',
       company: 'Remote',
       location: 'Remote',
