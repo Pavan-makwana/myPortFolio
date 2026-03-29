@@ -24,7 +24,7 @@ export function ProjectsPage({ onBack }: ProjectsPageProps) {
     {
       title: 'Finance Tracker',
       description: 'A comprehensive personal finance management application with budget tracking, expense categorization, and visual analytics.',
-      image: 'https://images.unsplash.com/photo-1748609278627-4b0e483b9b70?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmaW5hbmNlJTIwZGFzaGJvYXJkJTIwYW5hbHl0aWNzfGVufDF8fHx8MTc2ODAzNDI1OHww&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'https://media.licdn.com/dms/image/v2/D5612AQGplp7JKG6Iiw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1673950361361?e=2147483647&v=beta&t=L4d5P81GijVgU4u1yJtFLVsIqATkfWTrymEPSd_C6_o',
       tech: ['React', 'Node.js', 'Supabase', 'Chart.js'],
       github: 'https://github.com/Pavan-makwana/Finance_Tracker_P-1',
       demo: 'https://finance-tracker-pa1.vercel.app/',
@@ -32,15 +32,15 @@ export function ProjectsPage({ onBack }: ProjectsPageProps) {
     {
       title: 'Zerodha Clone',
       description: 'A modern trading platform clone featuring real-time stock data, portfolio management, and trading simulation.',
-      image: 'https://images.unsplash.com/photo-1766218334217-d2cc74c36fce?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdG9jayUyMHRyYWRpbmclMjBwbGF0Zm9ybXxlbnwxfHx8fDE3NjgwNTQ5OTd8MA&ixlib=rb-4.1.0&q=80&w=1080',
-      tech: ['Next.js', 'TypeScript', 'TailwindCSS', 'WebSocket'],
+      image: 'https://www.beleaftechnologies.com/static/media/dev-img-six.53e2896c3a7443267114.webp',
+      tech: ['React Vite', 'JavaScript', 'TailwindCSS', 'WebSocket'],
       github: 'https://github.com/Pavan-makwana/Zerodha-Clone-pa1',
       demo: 'https://zerodha-clone-frontend-pa1.vercel.app/',
     },
     {
       title: "Pa1's Music Player",
       description: 'A React-based music player that provides a clean and distraction-free playlist listening experience with smooth controls and responsive UI.',
-      image: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtdXNpYyUyMHBsYXllciUyMGFwcHxlbnwxfHx8fDE3MzY1NTY3Njl8MA&ixlib=rb-4.1.0&q=80&w=1080',
+      image: 'https://img.freepik.com/free-vector/glowing-musical-pentagram-background-with-sound-notes_1017-31220.jpg',
       tech: ['React.js', 'JavaScript', 'HTML', 'CSS'],
       github: 'https://github.com/Pavan-makwana/Playlist-App',
       demo: 'https://playlist-app-pa1.vercel.app/',

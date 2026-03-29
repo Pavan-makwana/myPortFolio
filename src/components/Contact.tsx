@@ -196,7 +196,7 @@ export function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-[var(--input-background)] border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] transition-all"
-                      placeholder="John Doe"
+                      placeholder="Pavan Makwana"
                     />
                   </div>
 
@@ -215,7 +215,7 @@ export function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 bg-[var(--input-background)] border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] transition-all"
-                      placeholder="john@example.com"
+                      placeholder="pa1@example.com"
                     />
                   </div>
 
