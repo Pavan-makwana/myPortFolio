@@ -122,9 +122,11 @@ export function Footer() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
+          
           <p className="text-sm text-muted-foreground flex items-center gap-2">
-            © {new Date().getFullYear()} Pavan Makwana. Made with{' '}
-            <Heart className="w-4 h-4 text-red-500 fill-red-500" /> in India
+            © {new Date().getFullYear()} Pavan Makwana. 
+            {/* Made with{' '} */}
+            {/* <Heart className="w-4 h-4 text-red-500 fill-red-500" /> in India */}
           </p>
           <p className="text-sm text-muted-foreground">
             Designed & Developed by Pavan Makwana
