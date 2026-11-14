@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef, useState } from 'react';
-import { Mail, MapPin, Send, Github, Linkedin, CheckCircle } from 'lucide-react';
+import { Mail, MapPin, Send, Github, Linkedin, CheckCircle, Phone, Globe, MessageSquare } from 'lucide-react';
 
 export function Contact() {
   const ref = useRef(null);
@@ -15,12 +15,14 @@ export function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Mock form submission
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name}`);
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+    window.location.href = `mailto:pavan561981@gmail.com?subject=${subject}&body=${body}`;
     setIsSubmitted(true);
     setTimeout(() => {
       setIsSubmitted(false);
       setFormData({ name: '', email: '', message: '' });
-    }, 3000);
+    }, 4000);
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -32,6 +34,12 @@ export function Contact() {
 
   const contactInfo = [
     {
+      icon: Phone,
+      label: 'Phone',
+      value: '+91 6353394638',
+      href: 'tel:+916353394638',
+    },
+    {
       icon: Mail,
       label: 'Email',
       value: 'pavan561981@gmail.com',
@@ -40,8 +48,14 @@ export function Contact() {
     {
       icon: MapPin,
       label: 'Location',
-      value: 'Ahmedabad, India',
+      value: 'Ahmedabad, Gujarat, India',
       href: '#',
+    },
+    {
+      icon: Globe,
+      label: 'Portfolio',
+      value: 'pavanmakwana.vercel.app',
+      href: 'https://pavanmakwana.vercel.app',
     },
   ];
 
@@ -58,6 +72,12 @@ export function Contact() {
       href: 'https://www.linkedin.com/in/pavan-makwana-05062oo6/',
       color: 'hover:text-[#0077B5]',
     },
+    {
+      name: 'WhatsApp',
+      icon: MessageSquare,
+      href: 'https://wa.me/916353394638?text=Hi%20Pavan,%20I%20saw%20your%20portfolio!',
+      color: 'hover:text-[#25D366]',
+    },
   ];
 
   return (
@@ -71,7 +91,7 @@ export function Contact() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Get In Touch</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? Let's build something amazing together
+            Have a project in mind or an open role? Let's build something impactful together
           </p>
         </motion.div>
 
@@ -92,33 +112,35 @@ export function Contact() {
                 </span>
               </h3>
               <p className="text-muted-foreground leading-relaxed">
-                I'm always open to discussing new projects, creative ideas, or
-                opportunities to be part of your vision. Feel free to reach out!
+                I'm open to discussing full-time opportunities, SaaS product development,
+                mobile applications, or client freelance work. Feel free to reach out directly via call, email, or WhatsApp!
               </p>
             </div>
 
             {/* Contact information */}
-            <div className="space-y-4">
+            <div className="grid sm:grid-cols-2 gap-4">
               {contactInfo.map((item, index) => {
                 const Icon = item.icon;
                 return (
                   <motion.a
                     key={item.label}
                     href={item.href}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="flex items-center gap-4 glass p-4 rounded-xl hover:bg-muted/50 transition-all group"
                     initial={{ opacity: 0, x: -20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ delay: 0.3 + index * 0.1 }}
+                    transition={{ delay: 0.3 + index * 0.08 }}
                     whileHover={{ x: 5 }}
                   >
                     <div className="w-12 h-12 rounded-lg bg-gradient-to-br from-[var(--primary)] to-[var(--accent)] flex items-center justify-center flex-shrink-0">
                       <Icon className="w-6 h-6 text-white" />
                     </div>
-                    <div>
-                      <div className="text-sm text-muted-foreground">
+                    <div className="overflow-hidden">
+                      <div className="text-xs text-muted-foreground">
                         {item.label}
                       </div>
-                      <div className="font-medium group-hover:text-[var(--primary)] transition-colors">
+                      <div className="font-medium text-sm group-hover:text-[var(--primary)] transition-colors truncate">
                         {item.value}
                       </div>
                     </div>
@@ -234,13 +256,13 @@ export function Contact() {
                       required
                       rows={5}
                       className="w-full px-4 py-3 bg-[var(--input-background)] border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary)] transition-all resize-none"
-                      placeholder="Tell me about your project..."
+                      placeholder="Tell me about your project or opportunity..."
                     />
                   </div>
 
                   <motion.button
                     type="submit"
-                    className="w-full px-8 py-4 bg-[var(--primary)] text-white rounded-lg flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-[var(--primary)]/50 transition-all"
+                    className="w-full px-8 py-4 bg-[var(--primary)] text-white rounded-lg flex items-center justify-center gap-2 hover:shadow-xl hover:shadow-[var(--primary)]/50 transition-all font-medium"
                     whileHover={{ scale: 1.02, y: -2 }}
                     whileTap={{ scale: 0.98 }}
                   >

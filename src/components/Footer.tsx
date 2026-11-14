@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { Github, Linkedin, Mail, Heart, Phone, MapPin } from 'lucide-react';
 
 export function Footer() {
   const ref = useRef(null);
@@ -27,6 +27,7 @@ export function Footer() {
 
   const quickLinks = [
     { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
@@ -53,10 +54,13 @@ export function Footer() {
             <h3 className="text-2xl font-bold bg-gradient-to-r from-[var(--hero-gradient-from)] to-[var(--hero-gradient-to)] bg-clip-text text-transparent mb-4">
               Pavan Makwana
             </h3>
-            <p className="text-muted-foreground text-sm leading-relaxed">
-              Full Stack Developer crafting modern web experiences with passion
-              and precision. Based in Ahmedabad, India.
+            <p className="text-muted-foreground text-sm leading-relaxed mb-4">
+              Full Stack & Product Developer focused on building scalable web applications, SaaS products, and mobile solutions.
             </p>
+            <div className="flex items-center gap-2 text-xs text-muted-foreground">
+              <MapPin className="w-3.5 h-3.5 text-[var(--primary)]" />
+              <span>Ahmedabad, Gujarat, India</span>
+            </div>
           </motion.div>
 
           {/* Quick Links */}
@@ -83,14 +87,14 @@ export function Footer() {
             </div>
           </motion.div>
 
-          {/* Social Links */}
+          {/* Social Links & Direct Contact */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h4 className="font-semibold mb-4">Connect</h4>
-            <div className="flex gap-4">
+            <div className="flex gap-4 mb-4">
               {socialLinks.map((social) => {
                 const Icon = social.icon;
                 return (
@@ -109,9 +113,18 @@ export function Footer() {
                 );
               })}
             </div>
-            <p className="text-muted-foreground text-sm mt-4">
-              pavan561981@gmail.com
-            </p>
+            <div className="space-y-1 text-sm text-muted-foreground">
+              <p>
+                <a href="mailto:pavan561981@gmail.com" className="hover:text-[var(--primary)] transition-colors">
+                  pavan561981@gmail.com
+                </a>
+              </p>
+              <p>
+                <a href="tel:+916353394638" className="hover:text-[var(--primary)] transition-colors">
+                  +91 6353394638
+                </a>
+              </p>
+            </div>
           </motion.div>
         </div>
 
@@ -122,14 +135,11 @@ export function Footer() {
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          
           <p className="text-sm text-muted-foreground flex items-center gap-2">
-            © {new Date().getFullYear()} Pavan Makwana. 
-            {/* Made with{' '} */}
-            {/* <Heart className="w-4 h-4 text-red-500 fill-red-500" /> in India */}
+            © {new Date().getFullYear()} Pavan Makwana. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
-            Designed & Developed by Pavan Makwana
+            Built with React, Next-gen UI & TailwindCSS
           </p>
         </motion.div>
       </div>

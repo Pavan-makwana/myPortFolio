@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { useInView } from 'motion/react';
 import { useRef } from 'react';
-import { Code2, Rocket, Users, Award } from 'lucide-react';
+import { Code2, Rocket, Users, Award, GraduationCap, Languages } from 'lucide-react';
 
 export function About() {
   const ref = useRef(null);
@@ -10,28 +10,28 @@ export function About() {
   const highlights = [
     {
       icon: Code2,
-      title: 'Clean Code',
-      description: 'Writing maintainable, scalable code that stands the test of time',
+      title: 'Clean Architecture',
+      description: 'Writing maintainable, scalable code using Next.js, React & NestJS',
     },
     {
       icon: Rocket,
-      title: 'Fast Delivery',
-      description: 'Efficient development workflow with timely project completion',
+      title: 'End-to-End Delivery',
+      description: 'Taking products from initial concept and UI to cloud deployment',
     },
     {
       icon: Users,
-      title: 'Client-Focused',
-      description: 'Understanding requirements and exceeding expectations',
+      title: 'Client & Product Focused',
+      description: 'Delivering tailored SaaS and mobile solutions with stellar UX',
     },
     {
       icon: Award,
-      title: 'Best Practices',
-      description: 'Following industry standards and modern development patterns',
+      title: 'APIs & Security',
+      description: 'Robust RESTful APIs, JWT auth, database design & optimization',
     },
   ];
 
   return (
-    <section className="py-20 px-6 relative overflow-hidden" ref={ref}>
+    <section id="about" className="py-20 px-6 relative overflow-hidden" ref={ref}>
       <div className="max-w-7xl mx-auto">
         <motion.div
           className="text-center mb-16"
@@ -41,8 +41,7 @@ export function About() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">About Me</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Passionate Full Stack Developer specializing in building exceptional
-            digital experiences
+            Full Stack & Product Developer focused on building scalable web, mobile, and SaaS solutions
           </p>
         </motion.div>
 
@@ -54,20 +53,31 @@ export function About() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <h3 className="text-2xl font-bold mb-4">
-              Crafting Digital Solutions
+              Building Scalable Products & Experiences
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-4">
               Hi, I'm <span className="text-foreground font-semibold">Pavan Makwana</span>, 
-              a Full Stack Developer based in Ahmedabad, India. I specialize in creating 
-              modern web applications using cutting-edge technologies like React, Next.js, 
-              and Node.js.
+              a Full Stack Developer and Product Developer based in Ahmedabad, India.
+              I focus on building scalable web applications, SaaS products, and mobile solutions 
+              using Next.js, React, React Native, Node.js, NestJS, and modern databases.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
-              With a strong foundation in both frontend and backend development, I bring 
-              ideas to life through clean, efficient code. Whether it's building dynamic 
-              user interfaces or developing robust APIs, I'm committed to delivering 
-              high-quality solutions that make a difference.
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Experienced in taking products from idea to implementation, with hands-on expertise 
+              in RESTful APIs, authentication workflows, database design, cloud deployment, 
+              and modern UI/UX design.
             </p>
+
+            {/* Quick credentials chip strip */}
+            <div className="pt-4 border-t border-border/50 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <GraduationCap className="w-4 h-4 text-[var(--primary)]" />
+                <span>B.Sc. IT · CGPA 8.18 (Gujarat Univ.)</span>
+              </div>
+              <div className="flex items-center gap-2 text-muted-foreground">
+                <Languages className="w-4 h-4 text-[var(--accent)]" />
+                <span>English · Hindi · Gujarati</span>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div

@@ -7,9 +7,10 @@ import {
   Database, 
   Wrench,
   Layers,
-  GitBranch,
   Smartphone,
   Cloud,
+  Terminal,
+  Sparkles,
   LucideIcon
 } from 'lucide-react';
 
@@ -31,18 +32,29 @@ export function Skills() {
 
   const skillCategories: SkillCategory[] = [
     {
-      title: 'Frontend',
+      title: 'Programming Languages',
+      icon: Terminal,
+      color: 'from-amber-500 to-orange-500',
+      skills: [
+        'JavaScript',
+        'TypeScript',
+        'Python',
+        'Java',
+        'C',
+        'C#'
+      ],
+    },
+    {
+      title: 'Frontend & Mobile',
       icon: Code2,
       color: 'from-blue-500 to-cyan-500',
       skills: [
         'React.js',
         'Next.js',
-        'JavaScript (ES6+)',
-        'HTML5 & CSS3',
+        'React Native',
+        'Expo',
         'TailwindCSS',
-        'Redux',
-        'Framer Motion',
-        'Responsive Design'
+        'HTML5 & CSS3'
       ],
     },
     {
@@ -52,51 +64,60 @@ export function Skills() {
       skills: [
         'Node.js',
         'Express.js',
+        'NestJS',
+        'Django',
         'REST APIs',
-        'GraphQL',
-        'Authentication',
-        'WebSockets',
-        'API Integration',
-        'Microservices'
+        'WebSockets'
       ],
     },
     {
-      title: 'Databases',
+      title: 'Databases & ORM',
       icon: Database,
       color: 'from-purple-500 to-pink-500',
       skills: [
-        'MongoDB',
         'PostgreSQL',
+        'MongoDB',
         'MySQL',
-        'Redis',
+        'Supabase',
         'Firebase',
-        'Prisma ORM',
-        'Database Design',
-        'Query Optimization'
+        'Prisma ORM'
       ],
     },
     {
-      title: 'Tools & Others',
+      title: 'Tools & Platforms',
       icon: Wrench,
       color: 'from-orange-500 to-red-500',
       skills: [
         'Git & GitHub',
         'Docker',
-        'AWS',
-        'Vercel',
-        'CI/CD',
-        'Jest & Testing',
-        'Figma',
-        'Postman'
+        'VS Code',
+        'Postman',
+        'Vercel & Render',
+        'Hostinger',
+        'Expo / EAS',
+        'Figma'
+      ],
+    },
+    {
+      title: 'Specialized & Others',
+      icon: Sparkles,
+      color: 'from-teal-500 to-cyan-500',
+      skills: [
+        'REST APIs',
+        'JWT & Authentication',
+        'Deployment',
+        'SEO Optimization',
+        'Prompt Engineering',
+        'AI Automation'
       ],
     },
   ];
 
   const additionalSkills: AdditionalSkill[] = [
     { icon: Layers, label: 'Full Stack Development' },
-    { icon: GitBranch, label: 'Version Control' },
-    { icon: Smartphone, label: 'Responsive Design' },
-    { icon: Cloud, label: 'Cloud Deployment' },
+    { icon: Smartphone, label: 'Mobile Apps (React Native & Flutter)' },
+    { icon: Cloud, label: 'Cloud Deployment (Vercel, Render, Hostinger)' },
+    { icon: Sparkles, label: 'AI Automation & Prompt Engineering' },
   ];
 
   return (
@@ -110,41 +131,41 @@ export function Skills() {
         >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Skills & Expertise</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life
+            Comprehensive technical skillset across frontend, mobile, backend, databases, and DevOps
           </p>
         </motion.div>
 
         {/* Main skill categories */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {skillCategories.map((category, index) => {
             const Icon = category.icon;
             return (
               <motion.div
                 key={category.title}
-                className="glass rounded-2xl p-8 hover:shadow-xl transition-all group"
+                className="glass rounded-2xl p-6 hover:shadow-xl transition-all group"
                 initial={{ opacity: 0, y: 30 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -5 }}
               >
-                <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center`}>
-                    <Icon className="w-7 h-7 text-white" />
+                <div className="flex items-center gap-4 mb-5">
+                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center flex-shrink-0`}>
+                    <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold">{category.title}</h3>
+                  <h3 className="text-xl font-bold">{category.title}</h3>
                 </div>
                 
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2.5">
                   {category.skills.map((skill, skillIndex) => (
                     <motion.div
                       key={skill}
                       className="flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
                       initial={{ opacity: 0, x: -10 }}
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ delay: index * 0.1 + skillIndex * 0.05 }}
+                      transition={{ delay: index * 0.08 + skillIndex * 0.04 }}
                     >
-                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)]" />
-                      <span className="text-sm">{skill}</span>
+                      <span className="w-1.5 h-1.5 rounded-full bg-[var(--primary)] flex-shrink-0" />
+                      <span className="text-sm font-medium">{skill}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -172,7 +193,7 @@ export function Skills() {
                 whileHover={{ scale: 1.05 }}
               >
                 <Icon className="w-5 h-5 text-[var(--primary)]" />
-                <span className="font-medium">{item.label}</span>
+                <span className="font-medium text-sm md:text-base">{item.label}</span>
               </motion.div>
             );
           })}
@@ -186,10 +207,10 @@ export function Skills() {
           transition={{ duration: 0.6, delay: 0.7 }}
         >
           {[
-            { number: '15+', label: 'Projects Completed' },
-            { number: '5+', label: 'Happy Clients' },
-            { number: '20+', label: 'Technologies' },
-            { number: '2+', label: 'Years Experience' },
+            { number: '15+', label: 'RESTful APIs Built' },
+            { number: '3+', label: 'Production Client Projects' },
+            { number: '20+', label: 'Mobile App Screens Prototyped' },
+            { number: '8.18', label: 'B.Sc. IT CGPA' },
           ].map((stat, index) => (
             <motion.div
               key={stat.label}

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Github, Linkedin, Mail, ArrowRight, Code2 } from 'lucide-react';
+import { Github, Linkedin, Mail, ArrowRight, Code2, Download, Phone } from 'lucide-react';
 
 export function Hero() {
   const socialLinks = [
@@ -20,6 +20,12 @@ export function Hero() {
       icon: Mail,
       href: 'mailto:pavan561981@gmail.com',
       color: 'hover:text-[var(--accent-cyan)]',
+    },
+    {
+      name: 'Phone',
+      icon: Phone,
+      href: 'tel:+916353394638',
+      color: 'hover:text-green-500',
     },
   ];
 
@@ -100,12 +106,21 @@ export function Hero() {
             </motion.h1>
 
             <motion.p
-              className="text-xl md:text-2xl text-[var(--text-secondary)]"
+              className="text-xl md:text-2xl text-[var(--text-secondary)] font-medium"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              React · Next.js · Node.js · APIs
+              Full Stack & Product Developer
+            </motion.p>
+
+            <motion.p
+              className="text-sm md:text-base text-[var(--primary)] font-mono"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.55 }}
+            >
+              Next.js · React Native · Node.js · NestJS · PostgreSQL
             </motion.p>
 
             <motion.p
@@ -114,9 +129,10 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
             >
-              Crafting modern web applications with clean code and exceptional
-              user experiences. Passionate about building scalable solutions and
-              bringing ideas to life.
+              Focused on building scalable web applications, SaaS products, and
+              mobile solutions using Next.js, React, Node.js, NestJS, and modern
+              databases. Experienced in taking products from idea to implementation
+              with expertise in APIs, authentication, and modern UI.
             </motion.p>
           </div>
 
@@ -129,17 +145,29 @@ export function Hero() {
           >
             <motion.button
               onClick={scrollToProjects}
-              className="px-8 py-4 bg-[var(--primary)] text-white rounded-full flex items-center gap-2 hover:shadow-xl hover:shadow-[var(--primary)]/50 transition-all"
+              className="px-6 py-3.5 bg-[var(--primary)] text-white rounded-full flex items-center gap-2 hover:shadow-xl hover:shadow-[var(--primary)]/50 transition-all font-medium text-sm md:text-base"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               View Projects
-              <ArrowRight className="w-5 h-5" />
+              <ArrowRight className="w-4 h-4" />
             </motion.button>
+
+            <motion.a
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3.5 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full flex items-center gap-2 hover:shadow-lg transition-all font-medium text-sm md:text-base"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Download className="w-4 h-4" />
+              Resume
+            </motion.a>
 
             <motion.button
               onClick={scrollToContact}
-              className="px-8 py-4 glass text-foreground rounded-full hover:bg-muted transition-all"
+              className="px-6 py-3.5 glass text-foreground rounded-full hover:bg-muted transition-all font-medium text-sm md:text-base"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -250,13 +278,13 @@ export function Hero() {
             </div>
 
             {/* Floating tech badges */}
-            {['React', 'Node.js', 'Next.js', 'MongoDB'].map((tech, i) => (
+            {['Next.js', 'React Native', 'NestJS', 'PostgreSQL', 'Prisma'].map((tech, i) => (
               <motion.div
                 key={tech}
                 className="absolute glass px-4 py-2 rounded-full text-sm font-medium"
                 style={{
-                  top: `${20 + Math.sin(i * 90) * 30}%`,
-                  left: `${20 + Math.cos(i * 90) * 30}%`,
+                  top: `${20 + Math.sin((i * 2 * Math.PI) / 5) * 32}%`,
+                  left: `${20 + Math.cos((i * 2 * Math.PI) / 5) * 32}%`,
                 }}
                 animate={{
                   y: [0, -10, 0],

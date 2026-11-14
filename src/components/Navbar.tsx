@@ -21,6 +21,7 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
+    { name: 'About', href: '#about' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
     { name: 'Experience', href: '#experience' },
@@ -66,7 +67,7 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
               <motion.a
                 key={link.name}
                 href={link.href}
-                className="text-foreground/80 hover:text-foreground transition-colors relative group"
+                className="text-foreground/80 hover:text-foreground transition-colors relative group font-medium text-sm"
                 whileHover={{ y: -2 }}
                 onClick={(e) => {
                   e.preventDefault();
@@ -98,14 +99,12 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
 
             {/* Resume button - desktop */}
             <motion.a
-              href="#contact"
-              className="hidden md:flex items-center gap-2 px-6 py-2 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full hover:shadow-lg transition-shadow"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hidden md:flex items-center gap-2 px-6 py-2 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full hover:shadow-lg transition-shadow text-sm font-medium"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('#contact');
-              }}
             >
               <Download className="w-4 h-4" />
               Resume
@@ -170,18 +169,17 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
               </motion.a>
             ))}
             <motion.a
-              href="#contact"
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full mt-4"
+              href="/resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-2 px-6 py-3 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full mt-4 font-medium"
               initial={{ opacity: 0, y: 20 }}
               animate={{
                 opacity: mobileMenuOpen ? 1 : 0,
                 y: mobileMenuOpen ? 0 : 20,
               }}
               transition={{ delay: 0.25 }}
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection('#contact');
-              }}
+              onClick={() => setMobileMenuOpen(false)}
             >
               <Download className="w-4 h-4" />
               Resume
