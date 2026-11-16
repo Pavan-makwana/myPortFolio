@@ -102,12 +102,12 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-md shadow-indigo-500/25 hover:shadow-indigo-500/40 border border-indigo-400/30 transition-all cursor-pointer"
+              className="hidden md:flex items-center justify-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 shadow-md shadow-emerald-600/25 border border-emerald-400/30 transition-all cursor-pointer whitespace-nowrap min-w-[120px]"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
               <Download className="w-4 h-4" />
-              Resume
+              <span>Resume</span>
             </motion.a>
 
             {/* Mobile menu button */}
@@ -172,7 +172,7 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white bg-gradient-to-r from-blue-600 to-indigo-600 shadow-md shadow-indigo-500/25 mt-4 font-semibold text-sm"
+              className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-white bg-gradient-to-r from-emerald-600 to-teal-600 shadow-md shadow-emerald-500/25 mt-4 font-semibold text-sm whitespace-nowrap"
               initial={{ opacity: 0, y: 20 }}
               animate={{
                 opacity: mobileMenuOpen ? 1 : 0,
@@ -182,7 +182,7 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
               onClick={() => setMobileMenuOpen(false)}
             >
               <Download className="w-4 h-4" />
-              Resume
+              <span>Resume</span>
             </motion.a>
           </div>
         </motion.div>

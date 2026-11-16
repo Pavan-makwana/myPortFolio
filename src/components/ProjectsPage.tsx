@@ -95,23 +95,23 @@ export function ProjectsPage({ onBack }: ProjectsPageProps) {
             href={project.github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 glass rounded-lg hover:bg-muted transition-colors text-sm"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="flex items-center justify-center gap-2 px-5 py-2.5 glass border border-border/80 rounded-xl hover:bg-muted transition-all text-sm font-medium text-foreground whitespace-nowrap shadow-sm"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
           >
             <Github className="w-4 h-4" />
-            Code
+            <span>Code</span>
           </motion.a>
           <motion.a
             href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 px-4 py-2 bg-[var(--primary)] text-white rounded-lg hover:shadow-lg transition-all text-sm"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="flex items-center justify-center gap-2 px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white rounded-xl shadow-md shadow-indigo-500/25 transition-all text-sm font-semibold whitespace-nowrap"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.96 }}
           >
             <ExternalLink className="w-4 h-4" />
-            Live Demo
+            <span>Live Demo</span>
           </motion.a>
         </div>
       </div>

@@ -145,7 +145,7 @@ export function Hero() {
           >
             <motion.button
               onClick={scrollToProjects}
-              className="px-7 py-3.5 rounded-full flex items-center gap-2.5 font-semibold text-sm md:text-base text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 border border-indigo-400/40 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all cursor-pointer group"
+              className="px-8 py-3.5 min-w-[170px] rounded-full flex items-center justify-center gap-2.5 font-semibold text-sm md:text-base text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 border border-blue-400/40 shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 transition-all cursor-pointer whitespace-nowrap group"
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.96 }}
             >
@@ -157,7 +157,7 @@ export function Hero() {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-7 py-3.5 rounded-full flex items-center gap-2.5 font-semibold text-sm md:text-base text-cyan-300 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/40 hover:border-cyan-400 shadow-md shadow-cyan-500/15 hover:shadow-cyan-500/30 backdrop-blur-md transition-all cursor-pointer group"
+              className="px-8 py-3.5 min-w-[155px] rounded-full flex items-center justify-center gap-2.5 font-semibold text-sm md:text-base text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 border border-emerald-400/40 shadow-lg shadow-emerald-600/30 hover:shadow-emerald-600/50 transition-all cursor-pointer whitespace-nowrap group"
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.96 }}
             >
@@ -167,7 +167,7 @@ export function Hero() {
 
             <motion.button
               onClick={scrollToContact}
-              className="px-7 py-3.5 rounded-full flex items-center gap-2.5 font-semibold text-sm md:text-base text-white bg-white/10 hover:bg-white/15 border border-white/25 hover:border-white/40 shadow-md backdrop-blur-md transition-all cursor-pointer"
+              className="px-8 py-3.5 min-w-[165px] rounded-full flex items-center justify-center gap-2.5 font-semibold text-sm md:text-base text-white bg-gradient-to-r from-purple-600 to-violet-600 hover:from-purple-700 hover:to-violet-700 border border-purple-400/40 shadow-lg shadow-purple-600/30 hover:shadow-purple-600/50 transition-all cursor-pointer whitespace-nowrap group"
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.96 }}
             >
