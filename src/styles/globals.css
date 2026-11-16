@@ -223,19 +223,19 @@ html {
   background: var(--hero-gradient-to);
 }
 
-/* Glassmorphism utility */
+/* Glassmorphism utility - Dark aesthetic */
 .glass {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
 }
 
 .dark .glass {
-  background: rgba(26, 26, 46, 0.65);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
 }

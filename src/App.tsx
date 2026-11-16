@@ -13,14 +13,13 @@ import { Footer } from './components/Footer';
 
 export default function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [theme, setTheme] = useState('dark');
   const [showProjectsPage, setShowProjectsPage] = useState(false);
 
   useEffect(() => {
-    // Check for saved theme preference or default to dark
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-    document.documentElement.classList.toggle('dark', savedTheme === 'dark');
+    // Permanently enforce dark mode
+    document.documentElement.classList.add('dark');
+    document.documentElement.classList.remove('light');
+    localStorage.setItem('theme', 'dark');
   }, []);
 
   useEffect(() => {
@@ -29,13 +28,6 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, [showProjectsPage]);
-
-  const toggleTheme = () => {
-    const newTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(newTheme);
-    localStorage.setItem('theme', newTheme);
-    document.documentElement.classList.toggle('dark', newTheme === 'dark');
-  };
 
   const handleLoadComplete = () => {
     setIsLoading(false);
@@ -64,7 +56,7 @@ export default function App() {
 
       {!isLoading && (
         <>
-          <Navbar theme={theme} toggleTheme={toggleTheme} />
+          <Navbar />
           
           {showProjectsPage ? (
             <ProjectsPage onBack={handleBackToHome} />

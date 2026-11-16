@@ -1,13 +1,8 @@
 import { motion } from 'motion/react';
-import { Moon, Sun, Menu, X, Download } from 'lucide-react';
+import { Menu, X, Download } from 'lucide-react';
 import { useState, useEffect } from 'react';
 
-interface NavbarProps {
-  theme: string;
-  toggleTheme: () => void;
-}
-
-export function Navbar({ theme, toggleTheme }: NavbarProps) {
+export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -82,31 +77,16 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
 
           {/* Right side buttons */}
           <div className="flex items-center gap-4">
-            {/* Theme toggle */}
-            <motion.button
-              onClick={toggleTheme}
-              className="p-2 rounded-full hover:bg-muted transition-colors"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              aria-label="Toggle theme"
-            >
-              {theme === 'dark' ? (
-                <Sun className="w-5 h-5" />
-              ) : (
-                <Moon className="w-5 h-5" />
-              )}
-            </motion.button>
-
             {/* Resume button - desktop */}
             <motion.a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center justify-center gap-2 px-6 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 shadow-md shadow-emerald-600/25 border border-emerald-400/30 transition-all cursor-pointer whitespace-nowrap min-w-[120px]"
+              className="hidden md:flex items-center justify-center gap-2 px-6 py-2.5 rounded-full text-sm font-medium text-white bg-white/[0.07] hover:bg-white/[0.14] border border-white/20 hover:border-white/40 shadow-md backdrop-blur-md transition-all cursor-pointer whitespace-nowrap min-w-[120px]"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Download className="w-4 h-4" />
+              <Download className="w-4 h-4 text-white/80" />
               <span>Resume</span>
             </motion.a>
 
@@ -172,7 +152,7 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-white bg-gradient-to-r from-emerald-600 to-teal-600 shadow-md shadow-emerald-500/25 mt-4 font-semibold text-sm whitespace-nowrap"
+              className="flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white bg-white/[0.07] hover:bg-white/[0.14] border border-white/20 shadow-md mt-4 font-medium text-sm whitespace-nowrap"
               initial={{ opacity: 0, y: 20 }}
               animate={{
                 opacity: mobileMenuOpen ? 1 : 0,
@@ -181,7 +161,7 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
               transition={{ delay: 0.25 }}
               onClick={() => setMobileMenuOpen(false)}
             >
-              <Download className="w-4 h-4" />
+              <Download className="w-4 h-4 text-white/80" />
               <span>Resume</span>
             </motion.a>
           </div>
