@@ -102,7 +102,7 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex items-center gap-2 px-6 py-2 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full hover:shadow-lg transition-shadow text-sm font-medium"
+              className="hidden md:flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 shadow-md shadow-indigo-500/25 hover:shadow-indigo-500/40 border border-indigo-400/30 transition-all cursor-pointer"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -172,7 +172,7 @@ export function Navbar({ theme, toggleTheme }: NavbarProps) {
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full mt-4 font-medium"
+              className="flex items-center justify-center gap-2 px-6 py-3 rounded-full text-white bg-gradient-to-r from-blue-600 to-indigo-600 shadow-md shadow-indigo-500/25 mt-4 font-semibold text-sm"
               initial={{ opacity: 0, y: 20 }}
               animate={{
                 opacity: mobileMenuOpen ? 1 : 0,

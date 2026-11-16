@@ -17,7 +17,8 @@ import {
 interface SkillCategory {
   title: string;
   icon: LucideIcon;
-  color: string;
+  gradient: string;
+  glow: string;
   skills: string[];
 }
 
@@ -34,7 +35,8 @@ export function Skills() {
     {
       title: 'Programming Languages',
       icon: Terminal,
-      color: 'from-amber-500 to-orange-500',
+      gradient: 'linear-gradient(135deg, #f59e0b, #ea580c)',
+      glow: 'rgba(245, 158, 11, 0.35)',
       skills: [
         'JavaScript',
         'TypeScript',
@@ -47,7 +49,8 @@ export function Skills() {
     {
       title: 'Frontend & Mobile',
       icon: Code2,
-      color: 'from-blue-500 to-cyan-500',
+      gradient: 'linear-gradient(135deg, #3b82f6, #06b6d4)',
+      glow: 'rgba(59, 130, 246, 0.35)',
       skills: [
         'React.js',
         'Next.js',
@@ -60,7 +63,8 @@ export function Skills() {
     {
       title: 'Backend',
       icon: Server,
-      color: 'from-green-500 to-emerald-500',
+      gradient: 'linear-gradient(135deg, #10b981, #059669)',
+      glow: 'rgba(16, 185, 129, 0.35)',
       skills: [
         'Node.js',
         'Express.js',
@@ -73,7 +77,8 @@ export function Skills() {
     {
       title: 'Databases & ORM',
       icon: Database,
-      color: 'from-purple-500 to-pink-500',
+      gradient: 'linear-gradient(135deg, #8b5cf6, #ec4899)',
+      glow: 'rgba(139, 92, 246, 0.35)',
       skills: [
         'PostgreSQL',
         'MongoDB',
@@ -86,7 +91,8 @@ export function Skills() {
     {
       title: 'Tools & Platforms',
       icon: Wrench,
-      color: 'from-orange-500 to-red-500',
+      gradient: 'linear-gradient(135deg, #f97316, #dc2626)',
+      glow: 'rgba(249, 115, 22, 0.35)',
       skills: [
         'Git & GitHub',
         'Docker',
@@ -101,7 +107,8 @@ export function Skills() {
     {
       title: 'Specialized & Others',
       icon: Sparkles,
-      color: 'from-teal-500 to-cyan-500',
+      gradient: 'linear-gradient(135deg, #14b8a6, #06b6d4)',
+      glow: 'rgba(20, 184, 166, 0.35)',
       skills: [
         'REST APIs',
         'JWT & Authentication',
@@ -149,7 +156,10 @@ export function Skills() {
                 whileHover={{ y: -5 }}
               >
                 <div className="flex items-center gap-4 mb-5">
-                  <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center flex-shrink-0`}>
+                  <div
+                    className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 shadow-md border border-white/10"
+                    style={{ background: category.gradient, boxShadow: `0 4px 14px ${category.glow}` }}
+                  >
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold">{category.title}</h3>

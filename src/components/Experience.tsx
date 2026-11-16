@@ -11,7 +11,8 @@ interface Experience {
   type: string;
   description: string;
   achievements: string[];
-  color: string;
+  gradient: string;
+  glow: string;
 }
 
 export function Experience() {
@@ -32,7 +33,8 @@ export function Experience() {
         'Engineered secure UPI fraud reporting workflows and cybersecurity advisory modules',
         'Built scalable services ensuring real-time fraud alert reporting and seamless user workflows',
       ],
-      color: 'from-blue-600 to-indigo-600',
+      gradient: 'linear-gradient(135deg, #2563eb, #4f46e5)',
+      glow: 'rgba(59, 130, 246, 0.45)',
     },
     {
       role: 'Full Stack Developer Intern',
@@ -47,7 +49,8 @@ export function Experience() {
         'Optimized database queries and improved frontend component rendering performance',
         'Collaborated in an agile environment conducting peer code reviews and sprint delivery',
       ],
-      color: 'from-purple-500 to-pink-500',
+      gradient: 'linear-gradient(135deg, #9333ea, #db2777)',
+      glow: 'rgba(168, 85, 247, 0.45)',
     },
     {
       role: 'UI & UX Designer Intern',
@@ -62,7 +65,8 @@ export function Experience() {
         'Maintained design consistency, typography standards, and color accessibility',
         'Collaborated with engineering team to ensure design fidelity during implementation',
       ],
-      color: 'from-pink-500 to-rose-500',
+      gradient: 'linear-gradient(135deg, #e11d48, #f43f5e)',
+      glow: 'rgba(244, 63, 94, 0.45)',
     },
     {
       role: 'Flutter App Developer Intern',
@@ -77,7 +81,8 @@ export function Experience() {
         'Integrated Firebase for real-time data storage and user management',
         'Collaborated in a team-based development environment to deliver high-quality mobile UI',
       ],
-      color: 'from-green-500 to-emerald-500',
+      gradient: 'linear-gradient(135deg, #059669, #10b981)',
+      glow: 'rgba(16, 185, 129, 0.45)',
     },
     {
       role: 'Freelancer',
@@ -92,7 +97,8 @@ export function Experience() {
         'Converted diverse business requirements into scalable, clean digital solutions',
         'Managed end-to-end design, development, cloud deployment, and ongoing client support',
       ],
-      color: 'from-cyan-500 to-teal-500',
+      gradient: 'linear-gradient(135deg, #0891b2, #0284c7)',
+      glow: 'rgba(6, 182, 212, 0.45)',
     },
   ];
 
@@ -132,7 +138,7 @@ export function Experience() {
 
         <div className="relative mb-24">
           {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[var(--primary)] via-[var(--accent)] to-transparent -translate-x-1/2" />
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[var(--primary)] via-[var(--accent-cyan)] to-transparent -translate-x-1/2" />
 
           <div className="space-y-12">
             {experiences.map((exp, index) => (
@@ -153,8 +159,16 @@ export function Experience() {
                   >
                     {/* Header */}
                     <div className="mb-4">
-                      <div className={`inline-block px-4 py-1 rounded-full bg-gradient-to-r ${exp.color} text-white text-sm font-medium mb-3`}>
-                        {exp.type}
+                      <div
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-semibold tracking-wider uppercase mb-3 shadow-md border border-white/20"
+                        style={{
+                          background: exp.gradient,
+                          color: '#ffffff',
+                          boxShadow: `0 2px 10px ${exp.glow}`,
+                        }}
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse" />
+                        <span>{exp.type}</span>
                       </div>
                       <h3 className="text-2xl font-bold mb-2 group-hover:text-[var(--primary)] transition-colors">
                         {exp.role}
@@ -201,12 +215,19 @@ export function Experience() {
                 {/* Timeline dot */}
                 <div className="hidden md:flex absolute left-1/2 top-8 -translate-x-1/2 items-center justify-center">
                   <motion.div
-                    className={`w-6 h-6 rounded-full bg-gradient-to-r ${exp.color} relative z-10`}
+                    className="w-5 h-5 rounded-full relative z-10 border-2 border-white/40 shadow-lg"
+                    style={{
+                      background: exp.gradient,
+                      boxShadow: `0 0 14px ${exp.glow}`,
+                    }}
                     initial={{ scale: 0 }}
                     animate={isInView ? { scale: 1 } : {}}
                     transition={{ delay: index * 0.15 }}
                   >
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-r from-white/20 to-transparent animate-ping" />
+                    <div
+                      className="absolute inset-0 rounded-full animate-ping opacity-35"
+                      style={{ background: exp.gradient }}
+                    />
                   </motion.div>
                 </div>
 

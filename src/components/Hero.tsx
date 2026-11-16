@@ -138,40 +138,40 @@ export function Hero() {
 
           {/* CTA buttons */}
           <motion.div
-            className="flex flex-wrap gap-4"
+            className="flex flex-wrap gap-4 pt-2"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7 }}
           >
             <motion.button
               onClick={scrollToProjects}
-              className="px-6 py-3.5 bg-[var(--primary)] text-white rounded-full flex items-center gap-2 hover:shadow-xl hover:shadow-[var(--primary)]/50 transition-all font-medium text-sm md:text-base"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+              className="px-7 py-3.5 rounded-full flex items-center gap-2.5 font-semibold text-sm md:text-base text-white bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 border border-indigo-400/40 shadow-lg shadow-indigo-500/30 hover:shadow-indigo-500/50 transition-all cursor-pointer group"
+              whileHover={{ scale: 1.04, y: -2 }}
+              whileTap={{ scale: 0.96 }}
             >
-              View Projects
-              <ArrowRight className="w-4 h-4" />
+              <span>View Projects</span>
+              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </motion.button>
 
             <motion.a
               href="/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3.5 bg-[var(--accent)] text-[var(--accent-foreground)] rounded-full flex items-center gap-2 hover:shadow-lg transition-all font-medium text-sm md:text-base"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+              className="px-7 py-3.5 rounded-full flex items-center gap-2.5 font-semibold text-sm md:text-base text-cyan-300 bg-cyan-500/10 hover:bg-cyan-500/20 border border-cyan-500/40 hover:border-cyan-400 shadow-md shadow-cyan-500/15 hover:shadow-cyan-500/30 backdrop-blur-md transition-all cursor-pointer group"
+              whileHover={{ scale: 1.04, y: -2 }}
+              whileTap={{ scale: 0.96 }}
             >
-              <Download className="w-4 h-4" />
-              Resume
+              <Download className="w-4 h-4 group-hover:-translate-y-0.5 transition-transform" />
+              <span>Resume</span>
             </motion.a>
 
             <motion.button
               onClick={scrollToContact}
-              className="px-6 py-3.5 glass text-foreground rounded-full hover:bg-muted transition-all font-medium text-sm md:text-base"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
+              className="px-7 py-3.5 rounded-full flex items-center gap-2.5 font-semibold text-sm md:text-base text-white bg-white/10 hover:bg-white/15 border border-white/25 hover:border-white/40 shadow-md backdrop-blur-md transition-all cursor-pointer"
+              whileHover={{ scale: 1.04, y: -2 }}
+              whileTap={{ scale: 0.96 }}
             >
-              Contact Me
+              <span>Contact Me</span>
             </motion.button>
           </motion.div>
 
